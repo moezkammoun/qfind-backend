@@ -1,0 +1,1 @@
+<a href="<?= Yii::$app->request->baseUrl ?>/industries-master">">go</a>

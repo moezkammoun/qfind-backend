@@ -1,0 +1,25 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+
+# deal with admin first
+
+RewriteCond %{REQUEST_URI} ^/qfind/(uploads)
+RewriteRule ^(uploads)($|/) - [L]
+
+
+RewriteCond %{REQUEST_URI} ^/qfind/(assets|css|js|images|img|fonts|map)
+RewriteRule ^assets/(.*)$ backend/web/assets/$1 [L]
+RewriteRule ^css/(.*)$ backend/web/css/$1 [L]
+RewriteRule ^js/(.*)$ backend/web/js/$1 [L]
+RewriteRule ^fonts/(.*)$ backend/web/fonts/$1 [L]
+RewriteRule ^images/(.*)$ backend/web/images/$1 [L]
+RewriteRule ^img/(.*)$ backend/web/img/$1 [L]
+
+
+
+RewriteCond %{REQUEST_URI} !^/qfind/(backend)/web/(assets|css|images|fonts|map|js)/
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ backend/web/index.php

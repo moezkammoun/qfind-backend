@@ -1,0 +1,11 @@
+@media (min-width: 768px){
+    .form-horizontal .control-label {
+        padding-top: 7px;
+        padding-left: 50px;
+        margin-bottom: 0;
+        text-align: left; 
+    }}
+.currency-img img {
+    width: 10px;
+}
+.bannerimg img {  width: 120px;height: 100px;  }
